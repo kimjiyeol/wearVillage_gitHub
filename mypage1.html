@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마이페이지</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      label {
+        font-weight: bold;
+      }
+      .input-text,
+      .input-email,
+      .select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 20%;
+      }
+      .input-email {
+        width: 80%;
+      }
+      .select {
+        width: 30%;
+      }
+      .full-width {
+        width: 100%;
+      }
+      .btn {
+        padding: 10px;
+        background-color: #dc4141;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        width: 50%;
+        margin: 0 auto;
+      }
+      hr {
+        border: 1px solid #000;
+        margin: 10px 0;
+      }
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f5f5f5;
+      }
+      .birth-select-container {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        width: 45%;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div class="container">
+      <h1>내 정보</h1>
+      <form>
+        <label for="photo">사진</label>
+        <input type="file" class="input-file" />
+        <br />
+
+        <hr />
+
+        <label for="nickname">닉네임</label>
+        <input type="text" class="input-text" />
+        <hr />
+
+        <label for="birthdate">생년월일</label>
+        <div class="birth-select-container">
+          <select class="select full-width"></select>
+          <select class="select full-width"></select>
+          <select class="select full-width"></select>
+        </div>
+        <hr />
+
+        <label for="gender">성별</label>
+        <select class="select">
+          <option value="male">남성</option>
+          <option value="female">여성</option>
+          <option value="other">기타</option>
+        </select>
+        <hr />
+
+        <label for="email">이메일</label>
+        <div class="email-container">
+          <input type="text" class="input-text" /> @
+          <select class="select">
+            <option value="example.com">example.com</option>
+            <option value="gmail.com">gmail.com</option>
+            <option value="naver.com">naver.com</option>
+            <!-- 다른 도메인 옵션 추가 -->
+          </select>
+        </div>
+        <hr />
+
+        <button type="button" class="btn">수정하기</button>
+      </form>
+    </div>
+    <footer></footer>
+    <script>
+      // 생년월일 옵션 생성
+      const birthYearSelect = document.querySelectorAll(".select")[0];
+      const birthMonthSelect = document.querySelectorAll(".select")[1];
+      const birthDaySelect = document.querySelectorAll(".select")[2];
+
+      const currentYear = new Date().getFullYear();
+      for (let year = currentYear - 100; year <= currentYear; year++) {
+        const option = document.createElement("option");
+        option.value = year;
+        option.textContent = year;
+        birthYearSelect.appendChild(option);
+      }
+
+      for (let month = 1; month <= 12; month++) {
+        const option = document.createElement("option");
+        option.value = month;
+        option.textContent = month;
+        birthMonthSelect.appendChild(option);
+      }
+
+      for (let day = 1; day <= 31; day++) {
+        const option = document.createElement("option");
+        option.value = day;
+        option.textContent = day;
+        birthDaySelect.appendChild(option);
+      }
+    </script>
+  </body>
+</html>
