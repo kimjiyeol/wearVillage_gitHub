@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마이페이지</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 100px auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      label {
+        font-weight: bold;
+      }
+      .input-text,
+      .input-email,
+      .select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 20%;
+      }
+      .input-email {
+        width: 80%;
+      }
+      .select {
+        width: 20%;
+      }
+      .full-width {
+        width: 100%;
+      }
+
+      hr {
+        border: 1px solid #000;
+        margin: 10px 0;
+      }
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f5f5f5;
+      }
+      .birth-select-container {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        width: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div class="container">
+      <h1>내 정보</h1>
+      <form>
+        <label for="photo">사진</label>
+        <br />
+        <br />
+        <br />
+        <hr />
+
+        <label for="nickname"
+          >닉네임 : <span class="nickname">홍길동</span></label
+        >
+        <hr />
+
+        <label for="birthdate"
+          >생년월일 : <span class="birthdate">1994/11/17</span></label
+        >
+        <hr />
+
+        <label for="gender">성별 : <span class="gender">남</span></label>
+        <hr />
+
+        <label for="email"
+          >이메일 : <span class="email">zzz@zzz.zzz</span></label
+        >
+        <hr />
+      </form>
+    </div>
+    <footer></footer>
+  </body>
+</html>
